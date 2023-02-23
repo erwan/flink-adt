@@ -17,6 +17,8 @@ publishMavenStyle := true
 
 publishTo := sonatypePublishToBundle.value
 
+Test / testOptions += Tests.Argument("-oF")
+
 // Need to isolate macro usage to version-specific folders.
 Compile / unmanagedSourceDirectories += {
   val dir              = (Compile / scalaSource).value.getPath
